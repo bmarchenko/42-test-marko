@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 {%for info in data%}
+<div style="float:left;width: 50%;">
 <p>Name: {{info.name}}</p>
-Last name: {{info.surname}}
-Date of birth: {{info.birthday}}
-Bio: {{info.bio}}
-Email: {{info.email}}
-Jabber: {{info.jabber}}
-Skype: {{info.skype}}
-Other contacts: {{info.other_contacts}}
+<p>Last name: {{info.surname}}</p>
+<p>Date of birth: {{info.birthday}}</p>
+<p>Bio:</p> <div>{{info.bio}}</div>
+</div>
+<div style="float:left;width: 50%;">
+<p>Email: {{info.email}}</p>
+<p>Jabber: {{info.jabber}}</p>
+<p>Skype: {{info.skype}}</p>
+<p>Other contacts:</p> <div>{{info.other_contacts}}</div>
+</div>
 {%endfor%}
 {%endblock%}
