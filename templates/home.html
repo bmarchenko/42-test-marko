@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 {%for info in data%}
-<div style="float:left;width: 50%;">
+<div class = "column">
 <p>Name: {{info.name}}</p>
 <p>Last name: {{info.surname}}</p>
 <p>Date of birth: {{info.birthday}}</p>
 <p>Bio:</p> <div>{{info.bio}}</div>
 </div>
-<div style="float:left;width: 50%;">
+<div class = "column">
 <p>Email: {{info.email}}</p>
 <p>Jabber: {{info.jabber}}</p>
 <p>Skype: {{info.skype}}</p>

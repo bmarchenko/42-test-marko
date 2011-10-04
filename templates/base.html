@@ -6,6 +6,12 @@
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>{% block title %}{% endblock %}</title>
+        <!--[if IE]><style>
+            div {
+                zoom: 1; /* trigger hasLayout */
+            }
+        </style><![endif]-->
+        <link rel="stylesheet" href="{{ STATIC_URL }}/media/css/style.css" />
 </head>
 <body id="{% block body_id %}{% endblock %}">
   <div id="body">
