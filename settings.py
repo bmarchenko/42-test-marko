@@ -90,7 +90,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'test_marko.urls'
+ROOT_URLCONF = '42-test-marko.urls'
 
 TEMPLATE_DIRS = ('templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
