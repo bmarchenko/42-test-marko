@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+{%for info in data%}
+<p>Name: {{info.name}}</p>
+Last name: {{info.surname}}
+Date of birth: {{info.birthday}}
+Bio: {{info.bio}}
+Email: {{info.email}}
+Jabber: {{info.jabber}}
+Skype: {{info.skype}}
+Other contacts: {{info.other_contacts}}
+{%endfor%}
+{%endblock%}
