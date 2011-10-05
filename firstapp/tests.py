@@ -8,7 +8,17 @@ Replace this with more appropriate tests for your application.
 from django.test import TestCase
 
 class HomePageTest(TestCase):
+    fixtures = ['initial_data.json']
+
     def test_index(self):
         response = self.client.get('/')
-        self.failUnlessEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue('data' in response.context)
+        self.assertEqual([poll.pk for poll in response.context['data']], [1])
 
+class RequestTest(TestCase):
+    def test_requests(self):
+        response = self.client.get('/requests/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue('request' in response.context)
+        self.assertEqual([poll.pk for poll in response.context['request']], [1])

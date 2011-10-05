@@ -12,7 +12,7 @@
     </tr>
 {%for req in request|slice:":10"%}
 <tr>
-<td>{{req.path}}</a></td>
+<td><a href="..{{ req.path }}" title="{{ req.path }}">{{req.path}}</a></td>
 
 <td>{{req.method}}</td>
 <td>{{req.time}}</td>
