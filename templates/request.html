@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load request_tag %}
+
+{% load request_admin %}
+{% block content %}
+<h2>Recent requests:</h2>
+<table>
+    <tr>
+        <th>Path</th>
+        <th>Method</th>
+        <th>Time</th>
+    </tr>
+{%for req in request|slice:":10"%}
+<tr>
+<td>{{req.path}}</a></td>
+
+<td>{{req.method}}</td>
+<td>{{req.time}}</td>
+</tr>
+{%endfor%}
+</table>
+{%endblock%}
