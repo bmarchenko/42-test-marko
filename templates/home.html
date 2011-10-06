@@ -1,24 +1,28 @@
 {% extends "base.html" %}
 
+{% load firstapp_tags %}
+
 {% block content %}
+
 {%for info in data%}
 <div class = "column">
 <p>Name: {{info.name}}</p>
 <p>Last name: {{info.surname}}</p>
 <p>Date of birth: {{info.birthday}}</p>
 <p>Bio:</p> <div>{{info.bio}}</div>
+<p><a href="../requests" title="requests">requests</a></p>
+{% if user.is_authenticated %}
+<p><a href="../edit" title="edit information">edit information</a></p>
+{% endif %}
 </div>
+
 <div class = "column">
-<p>Email: {{info.email}}</p>
+<p>Email: {{info.email}}<span style="float: right;"><a href="..{% edit_link info %}"  title="edit">Edit Admin</a></span></p>
 <p>Jabber: {{info.jabber}}</p>
 <p>Skype: {{info.skype}}</p>
 <p>Other contacts:</p> <div>{{info.other_contacts}}</div>
 </div>
 {%endfor%}
 
-<BR />
-<p><a href="../requests" title="requests">requests</a></p>
-{% if user.is_authenticated %}
-<p><a href="../edit" title="edit information">edit information</a></p>
-{% endif %}
-{%endblock%}
+
+{% endblock %}
