@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.views import login, logout
 
 
 # Uncomment the next two lines to enable the admin:
@@ -11,7 +12,12 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'firstapp.views.home', name='home'),
     url(r'^requests/', 'views.request'),
-    
+    url(r'^edit/', 'firstapp.views.edit', name='edit'),
+    (r'^accounts/login/$', login),
+    (r'^accounts/logout/$', logout),
+
+
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

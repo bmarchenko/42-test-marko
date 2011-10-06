@@ -6,17 +6,21 @@
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>{% block title %}{% endblock %}</title>
-        <!--[if IE]><style>
-            div {
-                zoom: 1; /* trigger hasLayout */
-            }
-        </style><![endif]-->
+     
         <link rel="stylesheet" href="{{ STATIC_URL }}/media/css/style.css" />
+        
 </head>
 <body id="{% block body_id %}{% endblock %}">
   <div id="body">
     {% block body %}
-    <h1>42 Coffee Cups Test Assignment</h1>
+    <h2>42 Coffee Cups Test Assignment
+    <div class="baselogin"> 
+    {% if user.is_authenticated %}
+    <a href="../accounts/logout/?next=/" title="logout">Logout</a>
+    {%else%}
+    <a href="../accounts/login/?next=/" title="login">Login</a>
+    {%endif%}
+    </div></h2>
       <div>
         {% block content_title %}{% endblock %}
       </div>

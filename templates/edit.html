@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+{{ form.non_field_errors }}
+{{ form.subject.errors }}
+<div class="column">
+<p><label for="id_name">Name:</label>
+        {{ info_form.name }}</p>
+<p><label for="id_surname">Last Name:</label>
+        {{ info_form.surname }}</p>
+<p><label for="id_birthday">Date of birth:</label>
+        {{ info_form.birthday }}</p>
+<p><label for="id_bio">Bio:</label></p>
+        {{ info_form.bio }}
+</div>
+
+<div class="column">
+<p><label for="id_email">Email:</label>
+        {{ info_form.email }}</p>
+<p><label for="id_jabber">Jabber:</label>
+        {{ info_form.jabber }}</p>
+<p><label for="id_skype">Skype:</label>
+        {{ info_form.skype }}</p>
+<p><label for="id_other_contacts">Other contacts:</label></p>
+        {{ info_form.other_contacts }}
+
+</div>
+<input type="hidden" name="action" value="update" />
+<input id="submit" type="submit" value="Save"> <span style="font-size: 150%"> </span><a href="../" title="cancel">Cancel</a>
+
+
+</form>
+<BR />
+<p><a href="../requests" title="requests">requests</a></p>
+{%endblock%}

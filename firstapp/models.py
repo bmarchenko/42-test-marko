@@ -2,11 +2,14 @@
 from django.db import models
 
 class PersonalInfo(models.Model):
-    name = models.CharField(u"Ім'я", max_length=50)
-    surname = models.CharField(u'Прізвище', max_length=50)
-    birthday = models.CharField(u'Дата народження', max_length=50)
-    bio = models.TextField(u'Біографія')
-    email = models.EmailField('email', max_length=50)
-    jabber = models.CharField('Jabber', max_length=50)
-    skype = models.CharField('Skype', max_length=50)
-    other_contacts = models.TextField(u'Інші контакти')
+    name = models.CharField('Name', max_length=50, blank=True, null=True)
+    surname = models.CharField('Last Name', max_length=50, blank=True, null=True)
+    birthday = models.CharField('Date of birth', max_length=50, blank=True, null=True)
+    bio = models.TextField('Bio', blank=True, null=True)
+    email = models.EmailField('email', max_length=50, blank=True, null=True)
+    jabber = models.CharField('Jabber', max_length=50, blank=True, null=True)
+    skype = models.CharField('Skype', max_length=50, blank=True, null=True)
+    other_contacts = models.TextField('Other contacts', blank=True, null=True)
+
+    def __unicode__(self):
+         return self.name

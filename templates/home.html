@@ -18,5 +18,7 @@
 
 <BR />
 <p><a href="../requests" title="requests">requests</a></p>
-
+{% if user.is_authenticated %}
+<p><a href="../edit" title="edit information">edit information</a></p>
+{% endif %}
 {%endblock%}
