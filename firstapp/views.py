@@ -11,8 +11,8 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request, template_name="home.html"):
-    data = PersonalInfo.objects.all()
-    return render_to_response(template_name, {'data' : data}, context_instance=RequestContext(request))
+    info = get_object_or_404(PersonalInfo, id = 1)
+    return render_to_response(template_name, {'info' : info}, context_instance=RequestContext(request))
 
 @login_required
 def edit(request, form_class=PersonalInfoForm, template_name="edit.html"):

@@ -1,11 +1,17 @@
-.column{
-float:left; 
-width: 50%;
-padding-bottom: 20px;
-margin-bottom: 20px;
+#container {
+margin: 10;
 }
-
-
+#column1 {
+float: left;
+width: 50%;
+}
+#column2 {
+float: right;
+width: 50%;
+}
+#footer {
+clear: both;
+}
 .baselogin{float:right; font-size:0.6em; font-weight: normal;}
 /* LOGIN FORM */
 body.login { background:#eee; }
