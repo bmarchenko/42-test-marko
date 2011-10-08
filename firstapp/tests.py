@@ -1,9 +1,12 @@
-from django.utils import simplejson as json 
-from django.test import TestCase
+try:
 import json
+except:
+import simplejson as json
+from django.test import TestCase
+
 
 class HomePageTest(TestCase):
-    fixtures = ['initial_data.json']
+    
 
     def test_index(self):
         response = self.client.get('/')
