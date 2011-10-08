@@ -1,4 +1,4 @@
-from django.utils import simplejson 
+from django.utils import simplejson as json 
 from django.test import TestCase
 
 class HomePageTest(TestCase):
