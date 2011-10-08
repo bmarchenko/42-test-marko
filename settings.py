@@ -119,7 +119,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'firstapp',
     'signals',
-    'json',
+    
 )
 
 # A sample logging configuration. The only tangible logging
