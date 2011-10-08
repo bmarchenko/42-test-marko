@@ -1,5 +1,6 @@
 from django.utils import simplejson as json 
 from django.test import TestCase
+import json
 
 class HomePageTest(TestCase):
     fixtures = ['initial_data.json']
