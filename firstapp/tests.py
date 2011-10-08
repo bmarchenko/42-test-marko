@@ -1,7 +1,7 @@
 try:
-import json
+    import json
 except:
-import simplejson as json
+    import simplejson as json
 from django.test import TestCase
 
 
