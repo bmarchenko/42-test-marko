@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-
+try:
+    import json
+except:
+    import simplejson as json
 from firstapp.models import PersonalInfo
 from firstapp.forms import PersonalInfoForm
 from django.shortcuts import render_to_response
