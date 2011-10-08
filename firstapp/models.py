@@ -2,6 +2,9 @@
 from django.db import models
 from django.core import urlresolvers
 from django.contrib.contenttypes.models import ContentType
+from signals.models import SignalsSave
+from django.db.models import signals 
+from django.dispatch import receiver
 
 class PersonalInfo(models.Model):
     name = models.CharField('Name', max_length=50, blank=True, null=True)
@@ -19,4 +22,5 @@ class PersonalInfo(models.Model):
     def get_admin_url(self):
         content_type = ContentType.objects.get_for_model(self.__class__)
         return urlresolvers.reverse("admin:%s_%s_change" % (content_type.app_label, content_type.model), args=(self.id,))
- 
+
+
