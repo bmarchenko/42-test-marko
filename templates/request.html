@@ -3,19 +3,23 @@
 
 {% load request_admin %}
 {% block content %}
-<h2>Recent requests:</h2>
+<h2>Requests by priority:</h2>
 <table>
     <tr>
+        <th>From</th>
         <th>Path</th>
         <th>Method</th>
-        <th>Time</th>
+        <th>Date/Time</th>
+        <th>Priority</th>
     </tr>
 {%for req in request|slice:":10"%}
 <tr>
+<td>{{req.user}}</td>
 <td><a href="..{{ req.path }}" title="{{ req.path }}">{{req.path}}</a></td>
-
 <td>{{req.method}}</td>
 <td>{{req.time}}</td>
+<td>{{req.priority}}</td>
+
 </tr>
 {%endfor%}
 </table>
