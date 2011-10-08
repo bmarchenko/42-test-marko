@@ -17,8 +17,7 @@ def home(request, template_name="home.html"):
 @login_required
 def edit(request, form_class=PersonalInfoForm, template_name="edit.html"):
     info = get_object_or_404(PersonalInfo, id = 1)
-    info_form = form_class()
-    #import pdb; pdb.set_trace()
+    info_form = form_class(instance = info)
     if request.method == "POST" and request.POST.get("action") == "update":
         info_form = form_class(request.POST, instance = info)
         if info_form.is_valid():

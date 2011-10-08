@@ -11,7 +11,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'firstapp.views.home', name='home'),
-    url(r'^requests/', 'views.request'),
+    url(r'^requests/', 'request.views.request'),
     url(r'^edit/', 'firstapp.views.edit', name='edit'),
     (r'^accounts/login/$', login),
     (r'^accounts/logout/$', logout),
