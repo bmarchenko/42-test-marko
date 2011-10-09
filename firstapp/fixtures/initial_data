@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0"><object pk="1" model="firstapp.personalinfo"><field type="CharField" name="name">Bogdan</field><field type="CharField" name="surname">Marchenko</field><field type="DateField" name="birthday">1988-01-22</field><field type="TextField" name="bio">Education:
+KNEU, KSE
+
+Occupation:
+Programmer
+</field><field type="CharField" name="email">bogdan.marko@gmail.com</field><field type="CharField" name="jabber">bogdan.marko@jabber.org</field><field type="CharField" name="skype">bogdan_marchenko</field><field type="TextField" name="other_contacts">cell phone: +380637304871</field></object></django-objects>

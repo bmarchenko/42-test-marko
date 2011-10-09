@@ -119,7 +119,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'firstapp',
     'signals',
-    'simplejson',
+    
     
 )
 
