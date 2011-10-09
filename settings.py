@@ -145,4 +145,6 @@ LOGGING = {
         },
     }
 }
-
+FIXTURE_DIRS = (
+   '/firstapp/fixtures/',
+)
