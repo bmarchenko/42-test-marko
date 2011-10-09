@@ -2,7 +2,8 @@
 from django.test import TestCase
 
 class HomePageTest(TestCase):
-    
+    fixtures = ['initial_data.xml']
+
 
     def test_index(self):
         response = self.client.get('/')
