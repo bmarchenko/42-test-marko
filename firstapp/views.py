@@ -11,18 +11,19 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request, template_name="home.html"):
-    info = get_object_or_404(PersonalInfo, id = 1)
-    return render_to_response(template_name, {'info' : info}, context_instance=RequestContext(request))
+    data = PersonalInfo.objects.all()
+    return render_to_response(template_name, {'data' : data}, context_instance=RequestContext(request))
 
 @login_required
 def edit(request, form_class=PersonalInfoForm, template_name="edit.html"):
     info = get_object_or_404(PersonalInfo, id = 1)
-    info_form = form_class(instance = info)
+    info_form = form_class()
+    #import pdb; pdb.set_trace()
     if request.method == "POST" and request.POST.get("action") == "update":
         info_form = form_class(request.POST, instance = info)
         if info_form.is_valid():
             info = info_form.save(commit=False)
-            info.save()           
+            info.save()
             return HttpResponseRedirect(reverse("home"))
         
                 
@@ -31,3 +32,5 @@ def edit(request, form_class=PersonalInfoForm, template_name="edit.html"):
         "info":info,
         
     }, context_instance=RequestContext(request))
+
+
