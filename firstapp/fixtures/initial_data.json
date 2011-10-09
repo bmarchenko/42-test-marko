@@ -1,0 +1,16 @@
+[
+    {
+        "pk": 1,
+        "model": "firstapp.personalinfo",
+        "fields": {
+            "bio": "Education:\r\nKNEU, KSE\r\n\r\nOccupation:\r\nProgrammer\r\n",
+            "surname": "Marchenko",
+            "name": "Bogdan",
+            "other_contacts": "cell phone: +380637304871",
+            "birthday": "1988-01-22",
+            "skype": "bogdan_marchenko",
+            "jabber": "bogdan.marko@jabber.org",
+            "email": "bogdan.marko@gmail.com"
+        }
+    }
+]
