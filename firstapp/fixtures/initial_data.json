@@ -13,7 +13,7 @@
             "email": "bogdan.marko@gmail.com"
         }
     },
-    [
+ 
     {
         "pk": 25, 
         "model": "auth.permission", 
