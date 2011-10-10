@@ -10,12 +10,12 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^requests/', 'request.views.request'),
+    url(r'^requests/', 'request.views.request', name='requests'),
     url(r'^$', 'firstapp.views.home', name='home'),
     
     url(r'^edit/', 'firstapp.views.edit', name='edit'),
-    (r'^accounts/login/$', login),
-    (r'^accounts/logout/$', logout),
+    url(r'^accounts/login/$', login, name='login'),
+    url(r'^accounts/logout/$', logout, name='logout'),
 
 
 
