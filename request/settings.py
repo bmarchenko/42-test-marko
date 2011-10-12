@@ -16,6 +16,8 @@ REQUEST_TRAFFIC_MODULES = getattr(settings, 'REQUEST_TRAFFIC_MODULES', (
 ))
 
 try:
-    REQUEST_BASE_URL = getattr(settings, 'REQUEST_BASE_URL', 'http://%s' % Site.objects.get_current().domain)
+    REQUEST_BASE_URL = getattr(settings, 'REQUEST_BASE_URL', 'http://%s' %
+    Site.objects.get_current().domain)
 except:
-    REQUEST_BASE_URL = getattr(settings, 'REQUEST_BASE_URL', 'http://127.0.0.1')
+    REQUEST_BASE_URL = getattr(settings, 'REQUEST_BASE_URL',
+    'http://127.0.0.1')
