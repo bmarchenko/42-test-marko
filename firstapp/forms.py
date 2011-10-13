@@ -6,3 +6,4 @@ from firstapp.models import PersonalInfo
 class PersonalInfoForm(forms.ModelForm):
     class Meta:
         model = PersonalInfo
+

@@ -12,7 +12,6 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^requests/', 'request.views.request', name='requests'),
     url(r'^$', 'firstapp.views.home', name='home'),
-    
     url(r'^edit/', 'firstapp.views.edit', name='edit'),
     url(r'^accounts/login/$', login, name='login'),
     url(r'^accounts/logout/$', logout, name='logout'),
@@ -25,5 +24,3 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
      url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-

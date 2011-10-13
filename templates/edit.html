@@ -1,38 +1,17 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-
 
 {% block content %}
+<div id = "column1">
+
+{%for field in info_form reversed%}
+
+{% ifequal forloop.counter 5 %}</ul></div>   <div id = "column2">{% endifequal %}
+  {{field.name}}<br>{{ field }} <br>
+
+{% endfor %}</div> 
+
 <form action="" method="post">{% csrf_token %}
-{{ form.non_field_errors }}
-{{ form.subject.errors }}
-
-
-<div id="column1">
-<p><label for="id_other_contacts">Other contacts:</label></p>
-        {{ info_form.other_contacts }}
-<p><label for="id_skype">Skype:</label>
-        {{ info_form.skype }}</p>
-<p><label for="id_jabber">Jabber:</label>
-        {{ info_form.jabber }}</p>
-<p><label for="id_email">Email:</label>
-        {{ info_form.email }}</p>
-</div>
-
-<div id="column2">
-<p><label for="id_bio">Bio:</label></p>
-        {{ info_form.bio }}
-<p><label for="id_birthday">Date of birth:</label>
-        {{ info_form.birthday }}</p>
-<p><label for="id_surname">Last Name:</label>
-        {{ info_form.surname }}</p>
-<p><label for="id_name">Name:</label>
-        {{ info_form.name }}</p>
-
-
-
-</div>
 <input type="hidden" name="action" value="update" />
 <input id="submit" type="submit" value="Save"> <span style="font-size: 150%"> </span><a href="../" title="cancel">Cancel</a>
 
@@ -43,16 +22,5 @@
 <p><a href="../requests" title="requests">requests</a></p>
 {%endblock%}
 {% block extra_body %}
-   		
-   		<script type="text/javascript" src="/media/js/topics.js"></script>
-		<script type="text/javascript" src="/media/js/jquery-1.5.1.min.js"></script>
-		<script type="text/javascript" src="/media/js/jquery-ui-1.8.14.custom.min.js"></script>
-		<script type="text/javascript" src="/js/jquery-ui-1.8.16.custom.min.js"></script>
-	    <script type="text/javascript" src="/js/jquery-1.6.2.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-
-		$( "#id_birthday" ).datepicker({ dayNamesMin: ['Нед', 'Пон', 'Вівт', 'Сер', 'Чт', 'Пт', 'Суб'], firstDay: 1, dateFormat: 'yy-mm-dd',  monthNames: ['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'] });
-	});
-	</script>     
+   		{% include "widgets.html" %} 
 {% endblock %}   

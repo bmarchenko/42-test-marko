@@ -14,12 +14,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db.sqlite',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite',
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'HOST': '',                      # Set to empty
+        'PORT': '',                      # Set to empt
     }
 }
 
@@ -59,6 +59,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    "/media",
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -81,7 +82,7 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
-TEMPLATE_CONTEXT_PROCESSORS = ('context_processors.settings',
+TEMPLATE_CONTEXT_PROCESSORS = ('firstapp.context_processors.settings',
     'django.contrib.auth.context_processors.auth',
     )
 
@@ -99,8 +100,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = ('templates',
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
+    # Put strings here, like "/home/html/django_teon Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
 
@@ -119,8 +119,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'firstapp',
     'signals',
-    
-    
+
 )
 
 # A sample logging configuration. The only tangible logging
