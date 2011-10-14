@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block extrahead %} 
+<script type="text/javascript" src="/media/js/jquery-1.5.1.js"></script> 
+<script type="text/javascript" src="/media/js/jquery.form.js"></script> 
+<script type="text/javascript"> 
+
+  
+  $('#myForm').submit(function() {
+    $(this).ajaxSubmit();
+    return false;
+  });
+</script> 
+{% endblock %}
+
+{% block content %}
+
+<form id="myForm" method="POST" action="">
+
+    {% csrf_token %}
+
+<div id = "column1">
+
+{%for field in info_form reversed%}
+
+{% ifequal forloop.counter 5 %}</ul></div>   <div id = "column2">{% endifequal %}
+  {{field.name}}<br>{{ field }} <br>
+
+{% endfor %}</div> 
+
+<input id="submit" type="submit" value="Save">
+
+<span style="font-size: 150%"> </span><a href={%url home %} title="cancel">Cancel</a>
+
+
+</form>
+<hr color = "black" >
+<BR />
+<p><a href={%url requests%} ">requests</a></p>
+{%endblock%}
+{% block extra_body %}
+{% endblock %}   

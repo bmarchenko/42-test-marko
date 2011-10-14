@@ -37,7 +37,7 @@
 {% block footer %}
 <br>
 <hr color = "black" >
-<p><a href="..{%url requests%}">requests</a></p>
+<p><a href={%url requests%}>requests</a></p>
 {% if user.is_authenticated %}
-<p><a href="..{%url edit%}">edit information</a></p>
+<p><a href={%url edit%}>edit information</a></p>
 {% endif %}{% endblock %}

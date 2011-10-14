@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 from django.core.management import execute_manager
-import imp
+import os.path
+import sys
+base = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(base, 'apps/'))
+sys.path.insert(0, base)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 try:
-    imp.find_module('settings')  # Assumed to be in the same directory.
+    import settings
 except ImportError:
     import sys
     sys.stderr.write("Error: Can't find the file 'settings.py' in the \
