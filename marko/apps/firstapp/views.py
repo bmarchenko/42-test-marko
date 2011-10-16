@@ -23,8 +23,7 @@ def edit(request, form_class=PersonalInfoForm, template_name="edit.html"):
         info_form = form_class(request.POST, instance=info)
         if info_form.is_valid():
             info = info_form.save(commit=False)
-            if request.is_ajax():
-                info.save()
+            info.save()
             return HttpResponseRedirect(reverse("home"))
     return render_to_response(template_name, {
         "info_form": info_form,

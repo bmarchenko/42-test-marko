@@ -1,7 +1,6 @@
 from django.test import TestCase
 from firstapp.models import PersonalInfo
 from signals.models import SignalsSave
-import datetime
 
 class SignalTest(TestCase):
     
@@ -14,11 +13,8 @@ class SignalTest(TestCase):
         info.save()
         
         signal = SignalsSave.objects.all().order_by('-time')[0]
-
         self.assertEquals(signal.signal_type, 'creation')
         self.assertEquals(signal.sender, 'PersonalInfo')
-
-
       
     def test_deletion(self):
         person = PersonalInfo.objects.get(id=1)
@@ -26,4 +22,3 @@ class SignalTest(TestCase):
 
         signal = SignalsSave.objects.all().order_by('-time')[0]
         self.assertEquals(signal.signal_type, 'deletion')
-     #   self.assertEquals(unicode(log.model_class), unicode(person.__class__))
