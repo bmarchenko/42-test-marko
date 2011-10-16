@@ -6,7 +6,6 @@ from django.contrib.contenttypes.models import ContentType
 
 class PersonalInfo(models.Model):
     name = models.CharField('Name', max_length=50, blank=True, null=True)
-    surname = models.CharField('Last Name', max_length=50, blank=True, null=True)
     surname = models.CharField('Last Name', max_length=50, blank=True,
     null=True)
     birthday = models.DateField('Date of birth', blank=True, null=True)

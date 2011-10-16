@@ -7,7 +7,7 @@ from django.dispatch import receiver
 class SignalsSave(models.Model):
     signal_type = models.CharField('signal_type', max_length=50, blank=True, null=True)
     sender = models.CharField('sender', max_length=50, blank=True, null=True)    
-    
+    time = models.DateTimeField(auto_now_add=True)
 @receiver(signals.post_delete)
 
 def my_callback(sender, **kwargs):
