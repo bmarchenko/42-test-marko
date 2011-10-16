@@ -1,5 +1,5 @@
 	
 	# run tests
 test:
-	python manage.py test firstapp signals request
+	python marko/manage.py test firstapp signals request
 
