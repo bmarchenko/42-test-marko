@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
+
 def home(request, template_name="home.html"):
     info = get_object_or_404(PersonalInfo, id=1)
     return render_to_response(template_name, {'info': info}, \

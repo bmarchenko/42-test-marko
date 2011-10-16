@@ -39,7 +39,6 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-STATIC_ROOT = os.path.join(BASE_PATH, 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_PATH, 'media')
@@ -52,7 +51,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    "/media",
+     os.path.join(BASE_PATH, 'media/'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

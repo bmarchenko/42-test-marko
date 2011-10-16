@@ -7,6 +7,8 @@ from django.conf import settings
 
 
 class HomePageTest(TestCase):
+    fixtures = ['initial_data.json']
+
     def test_index(self):
         url = reverse('home')
         response = self.client.get(url)
@@ -54,3 +56,13 @@ class TagTest(TestCase):
         response = self.client.get(reverse('home'))
         self.assertContains(response, '/admin/firstapp/personalinfo/1/',
                 count=1, status_code=200)
+
+
+class CalendarWidgetTest(TestCase):
+
+    def test_js(self):
+        js = '<script type="text/javascript" src="/static/js/widget-calendar.js"></script>'
+        c = Client()
+        c.login(username='admin', password='admin')
+        response = c.get(reverse('edit'))
+        self.assertContains(response, js, count=1)
