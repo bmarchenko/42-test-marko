@@ -21,8 +21,7 @@ class Request(models.Model):
     time = models.DateTimeField(_('time'), default=datetime.now)
 
     is_secure = models.BooleanField(_('is secure'), default=False)
-    is_ajax = models.BooleanField(_('is ajax'), default=False, help_text=
-    _('Wheather this request was used via javascript.'))
+    is_ajax = models.BooleanField(_('is ajax'), default=False)
 
     # User infomation
     ip = models.IPAddressField(_('ip address'))

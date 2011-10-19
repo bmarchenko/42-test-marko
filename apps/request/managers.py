@@ -24,8 +24,7 @@ class RequestQuerySet(models.query.QuerySet):
                     date = datetime.date(*time.strptime(year + month, '%Y' +
                     month_format)[:3])
                 else:
-                    raise TypeError, \
-                    'Request.objects.month() takes exactly 2 arguments'
+                    pass
             except ValueError:
                 return
 
@@ -65,8 +64,7 @@ class RequestQuerySet(models.query.QuerySet):
                     date = datetime.datetime.date(*time.strptime(year + month \
                     + day, '%Y' + month_format + day_format)[:3])
                 else:
-                    raise TypeError, \
-                    'Request.objects.day() takes exactly 3 arguments'
+                    pass
             except ValueError:
                 return
 

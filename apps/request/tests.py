@@ -3,6 +3,7 @@ from django.conf import settings
 from request.models import Request
 from django.core.urlresolvers import reverse
 
+
 class MiddlewareTest(TestCase):
 
     def setUp(self):

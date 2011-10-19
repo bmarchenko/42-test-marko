@@ -31,7 +31,7 @@ def set_count(items):
     for item in items:
         if not item:
             continue
-        if not item_count.has_key(item):
+        if not item in item_count:
             item_count[item] = 0
             item_count[item] += 1
 
