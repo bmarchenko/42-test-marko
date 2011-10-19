@@ -37,6 +37,15 @@ class ChangeInfoTest(TestCase):
         self.assertEqual(info.name, 'Hello')
         self.assertEqual(info.surname, 'World')
 
+    def test_reversed(self):
+        self.assertTrue(self.client.login(username="admin", password="admin"))
+        # A response
+        response = self.client.get(reverse('edit'))
+        # Check response status after auth
+        self.failUnlessEqual(response.status_code, 200)
+        # Check if fields was reversed
+        self.failIf(response.content.index('id="id_name"') <
+                    response.content.index('id="id_other_contacts"'))
 
 class ContextProcessorTest(TestCase):
 
