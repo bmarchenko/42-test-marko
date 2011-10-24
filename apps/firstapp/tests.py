@@ -4,7 +4,10 @@ from django.test import TestCase, Client
 from firstapp.models import PersonalInfo
 from django.core.urlresolvers import reverse
 from django.conf import settings
-
+from datetime import date
+import subprocess
+import sys
+from django.core.management import call_command
 
 class HomePageTest(TestCase):
     fixtures = ['initial_data.json']
@@ -75,3 +78,17 @@ class CalendarWidgetTest(TestCase):
         c.login(username='admin', password='admin')
         response = c.get(reverse('edit'))
         self.assertContains(response, js, count=1)
+
+
+class CommandTest(TestCase):
+
+    def testCommand(self):
+        ferr = ""
+        fout = ""
+        p = subprocess.Popen('python manage.py allobjects',
+                shell=True, #assuming test are handled in Unix
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE)
+        p.wait()
+        fout = p.stdout.read()
+        self.failIfEqual(fout, "")
