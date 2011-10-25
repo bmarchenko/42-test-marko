@@ -2,21 +2,15 @@
 
 {% block extrahead %} 
 {{info_form.media}}
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.form.js"></script> 
-<script type="text/javascript"> 
 
-  
-  $('#myForm').submit(function() {
-    $(this).ajaxSubmit();
-    return false;
-  });
-</script> 
+<script src="{{ STATIC_URL }}js/editpage.js"></script>
 
 {% endblock %}
 
 {% block content %}
-
-<form id="myForm" method="POST" action="">
+<div id="emsg">&nbsp;</div>
+  <form id="My_form" action="{%url edit%}"
+ method="post">
 
     {% csrf_token %}
 
@@ -37,7 +31,9 @@
 </form>
 <hr color = "black" >
 <BR />
+<p><a href={%url home%} >home</a></p>
 <p><a href={%url requests%} >requests</a></p>
+
 {%endblock%}
 {% block extra_body %}
 {% endblock %}   

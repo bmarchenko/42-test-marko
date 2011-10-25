@@ -1,7 +1,10 @@
-from django import template
-from firstapp.models import PersonalInfo
-register = template.Library()
+from django.template.base import Library
+
+register = Library()
 
 
-def edit_link(obj):
 
+@register.simple_tag
+def edit_link(object):
+    return "/admin/" + object._meta.app_label + "/" \
+        + object._meta.module_name + "/" + str(object.id) + "/"

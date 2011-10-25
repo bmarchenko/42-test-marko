@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load request_tag %}
-
+{% load firstapp_tags %}
 {% load request_admin %}
+
 {% block content %}
 <h2>Requests by priority:</h2>
 <table>
@@ -19,8 +20,12 @@
 <td>{{req.method}}</td>
 <td>{{req.time}}</td>
 <td>{{req.priority}}</td>
+<td> <a href="{% edit_link req %}">Edit Admin</a>
 
 </tr>
 {%endfor%}
 </table>
+<hr color=black>
+<p><a href={%url home%} >home</a></p>
+
 {%endblock%}
