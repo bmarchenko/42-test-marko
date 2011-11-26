@@ -30,7 +30,7 @@
           errors = data.errs;
           $.each(errors, function(fieldname, errmsg) {
             id = "#id_" + fieldname;
-            $(id).parent().before(errmsg);
+            $(id).before(errmsg);
           });
         }
       }

@@ -35,7 +35,7 @@ def edit(request, form_class=PersonalInfoForm, template_name="edit.html"):
     if form.is_valid():
         form.save()
         if request.is_ajax():
-            return HttpResponse(simplejson.dumps(resp_dict, ensure_ascii=False),
+            return HttpResponse(json.dumps(resp_dict, ensure_ascii=False),
                                 mimetype='application/json')
         else:
             return HttpResponseRedirect(reverse("home"))
@@ -46,7 +46,7 @@ def edit(request, form_class=PersonalInfoForm, template_name="edit.html"):
             for item_id, err_val in form.errors.items():
                 errs[item_id] = unicode(err_val)
             resp_dict['errs'] = errs
-            return HttpResponse(simplejson.dumps(resp_dict, ensure_ascii=False),
+            return HttpResponse(json.dumps(resp_dict, ensure_ascii=False),
                                 mimetype='application/json')
 
         else:

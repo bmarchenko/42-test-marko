@@ -12,6 +12,12 @@ width: 50%;
 #footer {
 clear: both;
 }
+.clearer{
+ clear: both;
+}
+.errorlist{
+ color: #FF0000;
+}
 .baselogin{float:right; font-size:0.6em; font-weight: normal;}
 /* LOGIN FORM */
 body.login { background:#eee; }
